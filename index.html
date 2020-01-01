@@ -1,0 +1,72 @@
+<head>
+  <html lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PLANILLA DE INFORMACIÓN DE EGRESADOS DEL DEPARTAMENTO DE AGRONOMÍA-UNS</title>
+
+</head>
+
+<body>
+  <section class="informacion">
+    <h3>
+      PLANILLA DE INFORMACIÓN DE EGRESADOS DEL DEPARTAMENTO DE AGRONOMÍA-UNS
+    </h3>
+    <h2>
+      DATOS DEL EGRESADO
+    </h2>
+
+    <form action="/hola" method="post">
+      <label for="apellido">APELLIDO:</label>
+      <input name="apellido" type="text" placeholder="Perez" required autofocus>
+      <label for="nombre">NOMBRE:</label>
+      <input name="nombre" type="text" placeholder="Juan" required>
+      <label for="lu">LU:</label>
+      <input name="lu" type="number" placeholder="247345" required>
+      <label for="dni">DNI:</label>
+      <input name="dni" type="number" placeholder="247345" required>
+      <label for="cuil">CUIL:</label>
+      <input name="cuil" type="number" placeholder="20326574877" required>
+      <label for="birthday">FECHA NACIMIENTO:</label>
+      <input name="birthday" type="date" required>
+      <label for="domicilio">DOMICILIO:</label>
+      <input name="domicilio" type="text" required>
+      <label for="localidad">LOCALIDAD:</label>
+      <input name="localidad" type="text" required>
+      <label for="provincia">PROVINCIA:</label>
+      <input name="provincia" type="text" required>
+      <label for="tel">TELEFONO:</label>
+      <input name="tel" type="number">
+      <label for="email">EMAIL:</label>
+      <input name="email" type="email" required>
+      <label for="contacto">CONTACTO FAMILIAR (teléfono o e-mail):</label>
+      <input name="contacto" type="text" required>
+      <label for="fechaTrabajo">FECHA DE DEFENSA DEL TRABAJO DE INTENSIFICACION:</label>
+      <input name="fechaTrabajo" type="date" required>
+      <label for="tituloTrabajo">TITULO DEL TRABAJO DE INTENSIFICACION:</label>
+      <input name="tituloTrabajo" type="text" required>
+      <label for="tApellido">APELLIDO TUTOR:</label>
+      <input name="tApellido" type="text" required>
+      <label for="tNombre">NOMBRE DEL TUTOR:</label>
+      <input name="tNombre" type="text" required>
+      <label for="cApellido1">APELLIDO DEL CONSEJERO:</label>
+      <input name="cApellido1" type="text" required>
+      <label for="cNombre1">NOMBRE DEL CONSEJERO:</label>
+      <input name="cNombre1" type="text" required>
+      <label for="cApellido2">APELLIDO CONSEJERO:</label>
+      <input name="cApellido2" type="text" required>
+      <label for="cNombre2">NOMBRE DEL CONSEJERO:</label>
+      <input name="cNombre2" type="text" required>
+      <input type="submit" value="Enviar">
+    </form>
+  </section>
+  <button onclick="generate()">Generar Archivo</button>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.14.0/docxtemplater.js"></script>
+<script src="https://unpkg.com/pizzip@3.0.6/dist/pizzip.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
+<script src="https://unpkg.com/pizzip@3.0.6/dist/pizzip-utils.js"></script>
+<script src="script.js"></script>
+
+</html>
