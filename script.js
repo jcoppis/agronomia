@@ -1,12 +1,22 @@
 function convFecha(fecha) {
   const date = fecha.split('-');
-  return `${date[2]}/${date[1]}/${date[0]}`;
+  if (date.lenght > 0) {
+    return `${date[2]}/${date[1]}/${date[0]}`;
+  }
+  return '';
+}
+
+function setLicencia(data, length = 6) {
+  for(let i = 0; i < length; i++) {
+    data[`rOpt${i+1}`] = ' ';
+  }
+  data[data.licencia] = 'X';
 }
 
 function generate(template = "https://github.com/jcoppis/agronomia/raw/master/templates/formEgresados.docx") {
   const formElem = new FormData(document.querySelector('form'));
   let data = {};
-  for(const val of formElem.entries()) {
+  for (const val of formElem.entries()) {
     data[val[0]] = val[1];
   }
   data['nota'] = 10;
@@ -14,9 +24,14 @@ function generate(template = "https://github.com/jcoppis/agronomia/raw/master/te
   data['materia'] = 'Apicultura dtdi thdithdithdi hdithdithdi hdithdithdi';
   data['fechaEgreso'] = convFecha('2020-05-02');
   data['prom'] = '8.5';
-  data['date'] = '2020-01-01';
+  data['date'] = convFecha((new Date()).toISOString().substring(0, 10));
   data['textoSecAcademico'] = 'Sra. Secretaria Académica';
   data['secAcademico'] = 'Mgtr. Liliana M. Gallez';
+
+  data.birthday = convFecha(data.birthday);
+  data.fechaTrabajo = convFecha(data.fechaTrabajo);
+  setLicencia(data);
+  console.log(data);
 
   saveToFile(data, template);
 }

@@ -3,8 +3,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
   <title>PLANILLA DE INFORMACIÓN DE EGRESADOS DEL DEPARTAMENTO DE AGRONOMÍA-UNS</title>
-
 </head>
 
 <body>
@@ -26,7 +26,7 @@
       <label for="dni">DNI:</label>
       <input name="dni" type="number" placeholder="247345" required>
       <label for="cuil">CUIL:</label>
-      <input name="cuil" type="number" placeholder="20326574877" required>
+      <input name="cuil" placeholder="20326574877" required>
       <label for="birthday">FECHA NACIMIENTO:</label>
       <input name="birthday" type="date" required>
       <label for="domicilio">DOMICILIO:</label>
@@ -36,7 +36,7 @@
       <label for="provincia">PROVINCIA:</label>
       <input name="provincia" type="text" required>
       <label for="tel">TELEFONO:</label>
-      <input name="tel" type="number">
+      <input name="tel" type="text">
       <label for="email">EMAIL:</label>
       <input name="email" type="email" required>
       <label for="contacto">CONTACTO FAMILIAR (teléfono o e-mail):</label>
@@ -57,10 +57,23 @@
       <input name="cApellido2" type="text" required>
       <label for="cNombre2">NOMBRE DEL CONSEJERO:</label>
       <input name="cNombre2" type="text" required>
+      <label for="licencia" class="description">
+        MARCAR LA LICENCIA SELECCIONADA:
+        <br>
+        <p>Nota: si el autor no marca ninguna licencia Creative Commons, la Biblioteca Digital Académica de la Universidad Nacional del Sur adopta Atribución – No Comercial – Sin Obra Derivada (by-nc-nd): No se permite un uso comercial de la obra original ni la generación de obras derivadas.</p>
+      </label>
+      <div class="opt">
+        <input type="radio" name="licencia" value="rOpt1"><b>Atribución (by)</b>: Se permite cualquier explotación de la obra, incluyendo la explotación con fines comerciales y la creación de obras derivadas, la distribución de las cuales también está permitida sin ninguna restricción. Esta licencia es una licencia libre según la Freedom Defined.<br>
+        <input type="radio" name="licencia" value="rOpt2"><b>Reconocimiento – Compartir Igual (by-sa)</b>: Se permite el uso comercial de la obra y de las posibles obras derivadas, la distribución de las cuales se debe hacer con una licencia igual a la que regula la obra original. Esta licencia es una licencia libre según la Freedom Defined.<br>
+        <input type="radio" name="licencia" value="rOpt3"><b>Atribución – No Comercial (by-nc)</b> Se permite la generación de obras derivadas siempre que no se haga con fines comerciales. Tampoco se puede utilizar la obra original con fines comerciales. Esta licencia no es una licencia libre.<br>
+        <input type="radio" name="licencia" value="rOpt4"><b>Atribución – No Comercial – Compartir Igual (by-nc-sa)</b> No se permite un uso comercial de la obra original ni de las posibles obras derivadas, la distribución de las cuales se debe hacer con una licencia igual a la que regula la obra original. Esta licencia no es una licencia libre.<br>
+        <input type="radio" name="licencia" value="rOpt5"><b>Atribución – Sin Obra Derivada (by-nd)</b>: Se permite el uso comercial de la obra pero no la generación de obras derivadas. Esta licencia no es una licencia libre.<br>
+        <input type="radio" name="licencia" value="rOpt6" checked><b>Atribución – No Comercial – Sin Obra Derivada (by-nc-nd)</b> No se permite un uso comercial de la obra original ni la generación de obras derivadas. Esta licencia no es una licencia libre, y es la más cercana al derecho de autor tradicional.<br>
+      </div>
       <input type="submit" value="Enviar">
     </form>
+    <button onclick="generate()">Generar Archivo</button>
   </section>
-  <button onclick="generate()">Generar Archivo</button>
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.14.0/docxtemplater.js"></script>
